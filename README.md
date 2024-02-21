@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# Movie Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React Ts web application for managing and view movies and actors.
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Movie Hub is a React Ts Web App built using Vite, Typescript, Axios, Material UI, Styled Components and Toastify.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- CRUD operations for Movies and Actors.
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Docker (version 4.26.1 or later)
+
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+https://github.com/jfescobar18/clear-frontend-test.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Create an .env file and add the base URI API
+```bash
+VITE_API_BASE_URL="https://localhost:3333"
+```
+3. Start the application with Docker
+
+```bash
+docker-compose up --build
+```
+
+4. Open browser on [localhost](http://localhost:4005/)
+
+## ToDo
+
+- Add Tests
+- Implement search endpoints
