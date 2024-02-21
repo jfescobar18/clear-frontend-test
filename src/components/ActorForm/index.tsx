@@ -35,7 +35,7 @@ const ActorForm = ({ handleSubmit, handleNameChange, name }: IActorForm) => {
           style={{ marginBottom: "16px" }}
         />
         <Button type="submit" variant="contained" color="primary">
-          Enviar
+          Save
         </Button>
       </form>
     </>
