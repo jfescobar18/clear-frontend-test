@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Libs
 import { Container, Grid } from "@mui/material";
 import axios from "axios";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // Pages
 import Index from "./pages/index";
 import ViewMovies from "./pages/viewMovies";
@@ -30,5 +32,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </Router>
       </Grid>
     </Container>
+    <ToastContainer />
   </React.StrictMode>
 );

@@ -14,12 +14,12 @@ import { Movie } from "../../models/movie";
 const ViewMoviesContainer = () => {
   const [movies, setMovies] = useState<Movie[]>();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("/api/Movies");
-      setMovies(response.data);
-    };
+  const fetchData = async () => {
+    const response = await axios.get("/api/Movies");
+    setMovies(response.data);
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
 
