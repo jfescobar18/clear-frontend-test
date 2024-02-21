@@ -7,12 +7,14 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
   TextField,
 } from "@mui/material";
 // Pages
 // Components and Containers
 // Types and Interfaces
 import { Actor } from "../../models/actor";
+import { SelectState } from "../../types/selectState";
 // Hooks
 
 interface IMovieForm {
@@ -21,7 +23,8 @@ interface IMovieForm {
     HTMLInputElement | HTMLTextAreaElement
   >;
   handleAddActorSelects: React.MouseEventHandler<HTMLButtonElement>;
-  handleActorsSelect: React.ReactEventHandler<HTMLDivElement>;
+  handleActorsSelect: (event: SelectChangeEvent<string>, index: number) => void;
+  selectValues: SelectState;
   actorSelects: number[];
   actors: Actor[];
   title: string;
@@ -32,6 +35,7 @@ const MovieForm = ({
   handleTitleChange,
   handleAddActorSelects,
   handleActorsSelect,
+  selectValues,
   actorSelects,
   actors,
   title,
@@ -65,7 +69,8 @@ const MovieForm = ({
                 <Select
                   label={`Select ${index + 1}`}
                   labelId={`select-label-${index}`}
-                  onSelect={handleActorsSelect}
+                  value={selectValues[index.toString()] || ""}
+                  onChange={(event) => handleActorsSelect(event, index)}
                 >
                   {actors.map((actor) => {
                     return (

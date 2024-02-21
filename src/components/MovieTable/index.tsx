@@ -32,9 +32,9 @@ const MovieTable = ({ movies }: IMovieTable) => {
         </TableHead>
         <TableBody>
           {movies?.map((movie) => (
-            <TableRow key={movie.actorId}>
-              <TableCell>{movie.name}</TableCell>
-              <TableCell>{movie.actors.join(", ")}</TableCell>
+            <TableRow key={movie.movieId}>
+              <TableCell>{movie.title}</TableCell>
+              <TableCell>{movie.actors}</TableCell>
             </TableRow>
           ))}
         </TableBody>
